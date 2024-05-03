@@ -5,18 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e96167f-06b0-4e9d-b5dd-008dd1446bbb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itacademy/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itacademy/Pages/BasePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itacademy/Pages/ProductListingPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/itacademy/BaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/itacademy/FacebookTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/itacademy/TestsForShoppingWebsite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itacademy/Pages/ProductListingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itacademy/Pages/ProductListingPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/itacademy/FacebookTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/itacademy/FacebookTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +47,7 @@
     "TestNG.FacebookTest.executor": "Run",
     "TestNG.TestsForShoppingWebsite.executor": "Run",
     "TestNG.TestsForShoppingWebsite.test1.executor": "Run",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>

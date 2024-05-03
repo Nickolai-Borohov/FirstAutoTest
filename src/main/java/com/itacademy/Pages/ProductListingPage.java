@@ -12,7 +12,7 @@ public class ProductListingPage extends  BasePage {
 public ProductListingPage (WebDriver driver)
 {
     super(driver);
-    PageFactory.initElements(driver,ProductListingPage.class);//this
+    PageFactory.initElements(driver,this);//this
 
 }
     public void openURL (){
