@@ -1,6 +1,8 @@
 package com.itacademy;
 
 import com.itacademy.Pages.ProductListingPage;
+import com.itacademy.utils.ScreenshitUtils;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -9,11 +11,12 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.w3c.dom.stylesheets.LinkStyle;
 
+import java.io.File;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestsForShoppingWebsite extends BaseTest {
+public class  TestsForShoppingWebsite extends BaseTest {
 
     //Тест 1
     //1. Найдите название первого продукта
@@ -30,6 +33,7 @@ public class TestsForShoppingWebsite extends BaseTest {
         WebElement FirstProduct = driver.findElement(By.xpath("//*[@class='sc-124al1g-2 dwOYCh'] //*[@class='sc-124al1g-4 eeXMBo']"));
         String FirstProductname = FirstProduct.findElement(By.xpath("//*[@class='sc-124al1g-2 dwOYCh'] //*[@class='sc-124al1g-4 eeXMBo']")).getText();
         FirstProduct.findElement(By.xpath("//*[@class='sc-124al1g-2 dwOYCh'] //*[@class='sc-124al1g-0 jCsgpZ']")).click();
+        ScreenshitUtils.takeScreenshot(driver);
         WebElement ProductInCart = driver.findElement(By.xpath("//*[@class='sc-11uohgb-0 hDmOrM'] //*[@class='sc-11uohgb-2 elbkhN']"));
         String ProductInCartName = ProductInCart.getText();
         //Assert.assertEquals(ProductInCartName,FirstProductname);
@@ -114,7 +118,8 @@ public class TestsForShoppingWebsite extends BaseTest {
         //2. Отфильтруйте продукты по любому размеру(сверху слева есть размеры S, M, ML и др)
         //3. Получите количество продуктов после фильтра  расспарсив сверху стрингу   Product(s) found и сравните с числом из первого пункта
 
-        driver.get("https://react-shopping-cart-67954.firebaseapp.com");
+        ProductListingPage productListingPage = new ProductListingPage(driver);
+        productListingPage.openURL();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
         Thread.sleep(5000);
         WebElement FoundResult = driver.findElement(By.xpath("//*[@class='sc-ebmerl-4 iliWeY']")); //      //*[text()=' Product(s) found']//*[@class='sc-ebmerl-4 iliWeY']
@@ -122,10 +127,7 @@ public class TestsForShoppingWebsite extends BaseTest {
         int QuantityProducts = Integer.parseInt(AllFoundproducts.split(" ")[0]);
         System.out.println(QuantityProducts);
 //        List<WebElement> allProd = new ArrayList<>(driver.findElements(By.xpath("//*[@class='sc-ebmerl-4 iliWeY']")));
-
-
-        WebElement MFilter = driver.findElement(By.xpath("//*[@class='sc-bj2vay-0 DCKcC'] //*[text()='M']"));
-        MFilter.click();
+        productListingPage.mFilter();
         Thread.sleep(5000);
         WebElement FoundResultMFilter = driver.findElement(By.xpath("//*[@class='sc-ebmerl-4 iliWeY']"));
         Thread.sleep(4000);
@@ -138,10 +140,20 @@ public class TestsForShoppingWebsite extends BaseTest {
         } else {
             System.out.println("Возможно что-то пошло не так");
         }
+
+
     }
 }
 
+//1. Добавьте в свой проект Page Factory and Page Object Pattern- готово
+//2. Пройдитесь по моему проекту и изучите его - г
+//3. Добавьте в свой проект config.properties и файл для считывания данных из него - ?
+//4. Добавьте фабрику для Драйверов- готово
+//5. Добавьте логику для скриншотов-готово
 
+
+//1. Доделывайте домашку
+//2. Создайте лисенеры,в лисенере добавьте логику для всех ваших действий в тестах(get(), click(), getText()и т.д.)
 
 //_________________________________________________________________________________________________________
 
@@ -179,3 +191,6 @@ public class TestsForShoppingWebsite extends BaseTest {
 //
 //        //   //*[text()='Add to cart']
 //    }
+
+
+
